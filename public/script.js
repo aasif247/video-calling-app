@@ -8,7 +8,7 @@ let userlist= [];
 let cUser;
 
 let YourName = prompt('Type Your Name');
-// let bar = confirm('Confirm or deny');
+let bar = confirm('Confirm or deny');
 console.log(YourName);
 
 var peer = new Peer(undefined,{   //we undefine this because peer server create it's own user it
@@ -29,9 +29,9 @@ navigator.mediaDevices.getUserMedia({     //by using this we can access user dev
     myVideoStream = stream;
 
     peer.on('call', call =>{               //here user system answer call and send there video stream to us
-    	//var acceptsCall = confirm("Videocall incoming");
+    	var acceptsCall = confirm("Videocall incoming");
 
-      //if(acceptsCall){
+      if(acceptsCall){
           console.log("answered");        
     	    call.answer(stream);               //via this send video stream to caller
           const video = document.createElement('video');
@@ -44,9 +44,9 @@ navigator.mediaDevices.getUserMedia({     //by using this we can access user dev
                video.remove()
           })
           
-     //   }else{
-     //    console.log("Call denied !");
-     //   }
+        }else{
+        console.log("Call denied !");
+        }
     });
 
     socket.on('user-connected', (userId)  =>{   //userconnected so we now ready to share 
@@ -169,7 +169,7 @@ const share =() =>{
   document.body.removeChild(share);
   alert('Copied');
  }
- //msg sen from user
+ //msg send from user
 let text = $('input');
 
 $('html').keydown((e) =>{
