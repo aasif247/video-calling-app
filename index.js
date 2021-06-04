@@ -88,9 +88,9 @@ io.on('connection', socket =>{
 	
 })
 
-//server.listen(process.env.PORT || 3000, () =>{
- 	//console.log("Serving port 3000")
+server.listen(process.env.PORT || 3000, () =>{
+ 	console.log("Serving port 3000")
 
-app.listen(process.env.port || 3000)	
+	
 
 });
