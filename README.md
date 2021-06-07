@@ -1,4 +1,4 @@
-# Video_conf_ScreenShare
+# IIUC_SMART_CLASSROOM
 
 requirements:
  1. node.js,
